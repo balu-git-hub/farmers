@@ -1,4 +1,16 @@
 package com.payir.routes
 
-// Facility routes implementation
+import com.payir.controllers.FacilityController
+import io.ktor.server.routing.*
 
+fun Route.facilityRoutes() {
+    val facilityController = FacilityController()
+    
+    with(facilityController) {
+        getFacilitiesRoute()
+        getFacilityRoute()
+        createFacilityRoute()
+        updateFacilityRoute()
+        getFacilityHistoryRoute()
+    }
+}

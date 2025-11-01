@@ -1,4 +1,13 @@
 package com.payir.routes
 
-// Sync routes implementation
+import com.payir.controllers.SyncController
+import io.ktor.server.routing.*
 
+fun Route.syncRoutes() {
+    val syncController = SyncController()
+    
+    with(syncController) {
+        getSeedPackageRoute()
+        syncChangesRoute()
+    }
+}

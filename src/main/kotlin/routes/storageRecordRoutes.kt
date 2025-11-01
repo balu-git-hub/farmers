@@ -1,4 +1,14 @@
 package com.payir.routes
 
-// StorageRecord routes implementation
+import com.payir.controllers.StorageRecordController
+import io.ktor.server.routing.*
 
+fun Route.storageRecordRoutes() {
+    val storageRecordController = StorageRecordController()
+    
+    with(storageRecordController) {
+        createStorageRecordRoute()
+        getStorageRecordsRoute()
+        getStorageRecordHistoryRoute()
+    }
+}

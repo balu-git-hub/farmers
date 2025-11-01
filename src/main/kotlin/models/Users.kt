@@ -3,6 +3,7 @@ package com.payir.models
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.javatime.CurrentTimestamp
 import org.jetbrains.exposed.sql.javatime.timestamp
+import org.jetbrains.exposed.sql.*
 
 object Users : Table("users") {
     val id = uuid("id").autoGenerate()
